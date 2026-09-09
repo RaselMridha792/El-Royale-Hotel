@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El Royale Hotel &mdash; Studio City, Los Angeles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..600,0..100,0..1&family=Karla:ital,wght@0,300..700;1,400..600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --forest:#173328;
+  --forest-2:#22493A;
+  --oxblood:#6E2A2A;
+  --brass:#9E7C34;
+  --brass-soft:#C6A868;
+  --parchment:#EFE7D6;
+  --paper:#FBF8F1;
+  --ink:#1A1F1B;
+  --stone:#6B7369;
+  --line:#D9D0BC;
+  --line-dark:rgba(255,255,255,.2);
+
+  --display:"Fraunces","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --ui:"Karla",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --pad:clamp(20px,5vw,72px);
+  --maxw:1320px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--ui);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+h1,h2,h3,h4{font-family:var(--display);font-weight:400;margin:0;font-variation-settings:"SOFT" 26,"WONK" 1;letter-spacing:-.015em;line-height:1.09}
+p{margin:0 0 1em}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+
+/* resilient image box */
+.ph{position:relative;overflow:hidden;background:radial-gradient(120% 90% at 22% 12%,#2C5A46 0%,transparent 62%),linear-gradient(150deg,#1E4534 0%,#132A21 58%,#25503E 100%)}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .7s ease}
+.ph img.on{opacity:1}
+.ph::after{content:attr(data-cap);position:absolute;left:12px;bottom:12px;z-index:2;padding:6px 11px;font-size:10px;letter-spacing:.16em;color:#EFE7D6;background:rgba(15,36,27,.72);opacity:0;transition:opacity .3s}
+.ph.noimg::after{opacity:1}
+
+.notice{background:var(--forest);color:#DCE6DE;font-size:12.5px;letter-spacing:.03em;display:flex;align-items:center;justify-content:center;gap:14px;padding:8px 16px;position:relative;z-index:80;text-align:center}
+.notice b{color:#fff;font-weight:600}
+.notice button{color:#93A99A;font-size:16px;line-height:1;padding:2px 6px;flex:none}
+.notice button:hover{color:#fff}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:70;color:#fff;transition:background .35s,box-shadow .35s,color .35s}
+.hdr.stuck{background:var(--paper);color:var(--ink);box-shadow:0 1px 0 var(--line)}
+.hdr.stuck .btn-solid{color:#fff}
+.hdr-top{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px var(--pad);max-width:var(--maxw);margin:0 auto}
+.brand{display:flex;flex-direction:column;line-height:1}
+.brand .mark{font-family:var(--display);font-size:23px;letter-spacing:.15em;font-variation-settings:"SOFT" 0,"WONK" 0}
+.brand .sub{font-size:9.5px;letter-spacing:.3em;margin-top:6px;opacity:.72;white-space:nowrap}
+.nav{display:flex;gap:24px;font-size:14.5px;white-space:nowrap}
+.nav a{padding:6px 0;border-bottom:1px solid transparent;transition:border-color .2s}
+.nav a:hover{border-bottom-color:var(--brass-soft)}
+.hdr-act{display:flex;align-items:center;gap:20px;font-size:14px;white-space:nowrap}
+.btn{display:inline-block;padding:12px 24px;font-size:13.5px;letter-spacing:.11em;border:1px solid currentColor;transition:background .25s,color .25s,border-color .25s}
+.btn-solid{background:var(--brass);border-color:var(--brass);color:#fff}
+.btn-solid:hover{background:#83662A;border-color:#83662A}
+.btn-dark{background:var(--forest);border-color:var(--forest);color:#fff}
+.btn-dark:hover{background:#0E2119;border-color:#0E2119}
+.burger{display:none;flex-direction:column;gap:5px;padding:8px}
+.burger i{display:block;width:22px;height:1.5px;background:currentColor}
+
+/* hero */
+.hero{position:relative;margin-top:calc(-1 * var(--hdr-h,76px));min-height:min(94svh,840px);display:flex;align-items:flex-end;padding:0}
+.hero .ph{position:absolute;inset:0}
+.hero .ph::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(95deg,rgba(12,26,20,.9) 0%,rgba(12,26,20,.6) 42%,rgba(12,26,20,.18) 100%),linear-gradient(180deg,rgba(12,26,20,.5) 0%,rgba(12,26,20,0) 32%,rgba(12,26,20,.7) 100%)}
+.hero-inner{position:relative;z-index:3;width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--pad) 56px;color:#fff}
+.est{display:inline-flex;align-items:center;gap:12px;font-size:11.5px;letter-spacing:.28em;color:var(--brass-soft);margin-bottom:22px;opacity:0}
+.est::before,.est::after{content:"";width:26px;height:1px;background:var(--brass-soft)}
+.hero h1{font-size:clamp(38px,6.8vw,90px);font-weight:300;max-width:16ch;font-variation-settings:"SOFT" 36,"WONK" 1;opacity:0}
+.hero h1 em{font-style:italic;font-weight:300}
+.hero-lede{max-width:47ch;margin-top:22px;font-size:17.5px;color:#E2EBE4;opacity:0}
+.rise{animation:rise .95s cubic-bezier(.2,.7,.3,1) forwards}
+.d1{animation-delay:.2s}.d2{animation-delay:.35s}.d3{animation-delay:.52s}
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+/* booking bar */
+.bookbar-hold{position:relative;z-index:20;margin-top:-46px}
+.bookbar{background:var(--forest);color:#fff;max-width:var(--maxw);margin:0 auto;position:relative;display:grid;grid-template-columns:1.15fr 1.15fr .9fr .9fr auto}
+.bf{padding:20px 24px;border-right:1px solid var(--line-dark);text-align:left;width:100%;transition:background .2s}
+.bf:hover{background:rgba(255,255,255,.05)}
+.bf-label{font-size:10.5px;letter-spacing:.24em;color:var(--brass-soft);display:block;margin-bottom:7px}
+.bf-val{font-size:16px;display:block;color:#fff}
+.bf-val small{color:#93A99A;font-size:13px;margin-left:6px}
+.bf-go{border-right:0;background:var(--brass);padding:0 40px;font-size:13.5px;letter-spacing:.14em;color:#fff;display:flex;align-items:center;justify-content:center;transition:background .25s}
+.bf-go:hover{background:#83662A}
+.bf-hint{grid-column:1/-1;border-right:0;border-top:1px solid var(--line-dark);padding:11px 24px;font-size:13px;color:#A6BBAC;display:flex;align-items:center;gap:9px}
+.dot{width:5px;height:5px;background:var(--brass-soft);border-radius:50%;flex:none}
+.pop{position:absolute;top:calc(100% + 1px);left:0;background:var(--paper);color:var(--ink);border:1px solid var(--line);padding:22px;z-index:40;display:none;box-shadow:0 24px 50px rgba(23,51,40,.2);cursor:default;min-width:300px}
+.pop.open{display:block}
+.cal-wrap{display:flex;gap:34px}
+.cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.cal-head strong{font-family:var(--display);font-size:16px;font-weight:500}
+.cal-nav{padding:4px 9px;color:var(--stone);font-size:16px;line-height:1}
+.cal-nav:hover{color:var(--ink)}
+.cal{border-collapse:collapse}
+.cal th{font-size:10px;letter-spacing:.14em;color:var(--stone);font-weight:500;padding:6px 0;width:36px}
+.cal td{padding:1px;text-align:center}
+.day{width:36px;height:34px;font-size:13.5px;display:flex;align-items:center;justify-content:center;transition:background .15s,color .15s}
+.day:hover{background:var(--parchment)}
+.day.off{color:#C2C7BF;pointer-events:none}
+.day.sel{background:var(--forest);color:#fff}
+.day.in{background:var(--parchment)}
+.cal-foot{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;color:var(--stone)}
+.stepper{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px solid var(--line)}
+.stepper:last-of-type{border-bottom:0}
+.stepper .lbl{font-size:14.5px}
+.stepper .lbl small{display:block;font-size:12px;color:var(--stone)}
+.steps{display:flex;align-items:center;gap:14px}
+.steps button{width:30px;height:30px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:15px}
+.steps button:hover{border-color:var(--forest)}
+.steps span{width:18px;text-align:center;font-size:15px}
+.code-in{width:100%;padding:11px 13px;border:1px solid var(--line);background:#fff;font:inherit;font-size:14.5px;margin-bottom:12px}
+.code-note{font-size:12.5px;color:var(--stone);line-height:1.5}
+
+/* sections */
+section{padding:clamp(72px,9vw,128px) 0}
+section[id],div[id]{scroll-margin-top:calc(var(--hdr-h,76px) + 24px)}
+.sec-mark{display:flex;align-items:center;gap:14px;font-size:11.5px;letter-spacing:.26em;color:var(--brass);margin-bottom:26px}
+.sec-mark::before{content:"";width:34px;height:1px;background:var(--brass-soft)}
+h2{font-size:clamp(30px,4.3vw,52px);font-weight:300;font-variation-settings:"SOFT" 32,"WONK" 1}
+.lede{font-size:19px;color:#3B463D;max-width:58ch;line-height:1.72}
+
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,88px);align-items:center}
+.intro-figs{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:end}
+.intro-figs .ph{aspect-ratio:3/4}
+.intro-figs .ph:first-child{aspect-ratio:3/4.6}
+.facts{margin-top:36px;border-top:1px solid var(--line)}
+.fact{display:flex;gap:18px;padding:13px 0;border-bottom:1px solid var(--line);font-size:15px}
+.fact dt{width:140px;flex:none;color:var(--stone)}
+.fact dd{margin:0}
+
+/* rooms */
+.rooms{background:var(--parchment)}
+.rooms-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:50px}
+.dates-chip{display:none;align-items:center;gap:12px;background:var(--forest);color:#fff;padding:10px 18px;font-size:13px}
+.dates-chip.on{display:inline-flex}
+.dates-chip button{color:var(--brass-soft);font-size:12px;letter-spacing:.1em}
+.dates-chip button:hover{color:#fff}
+.room{display:grid;grid-template-columns:1.06fr 1fr;gap:clamp(26px,4.4vw,64px);align-items:center;padding:44px 0;border-top:1px solid var(--line)}
+.room:last-of-type{border-bottom:1px solid var(--line)}
+.room:nth-of-type(even) .room-fig{order:2}
+.room-fig{aspect-ratio:4/2.85}
+.room-fig img{transition:transform .8s cubic-bezier(.2,.7,.3,1)}
+.room:hover .room-fig img{transform:scale(1.035)}
+.room-tag{position:absolute;top:0;left:0;z-index:3;background:var(--paper);color:var(--forest);font-size:11px;letter-spacing:.16em;padding:9px 15px}
+.room h3{font-size:clamp(26px,3vw,36px);font-weight:400}
+.room-specs{display:flex;flex-wrap:wrap;gap:8px 22px;margin:16px 0 18px;font-size:13.5px;color:var(--stone)}
+.room-specs span{position:relative;padding-left:15px}
+.room-specs span::before{content:"";position:absolute;left:0;top:50%;width:5px;height:1px;background:var(--brass-soft)}
+.room p{color:#3B463D;font-size:16px;max-width:48ch}
+.room-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-top:26px;padding-top:20px;border-top:1px solid var(--line);flex-wrap:wrap}
+.price .from{font-size:11.5px;letter-spacing:.2em;color:var(--stone);display:block;margin-bottom:5px}
+.price .amt{font-family:var(--display);font-size:38px;font-weight:400;letter-spacing:-.02em;line-height:1}
+.price .per{font-size:13.5px;color:var(--stone);margin-left:7px}
+.price .total{display:none;font-size:13.5px;color:var(--forest-2);margin-top:7px}
+.price .total.on{display:block}
+.room-cta{display:flex;align-items:center;gap:16px}
+.avail{font-size:12px;letter-spacing:.1em;color:var(--forest-2);border:1px solid var(--brass-soft);padding:6px 11px;display:none}
+.avail.on{display:inline-block}
+.avail.low{color:var(--oxblood);border-color:#C99191}
+.rooms-more{margin-top:44px;text-align:center;font-size:14.5px}
+.rooms-more a{border-bottom:1px solid var(--brass-soft);padding-bottom:3px}
+
+/* amenities */
+.amen{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(32px,6vw,84px)}
+.amen-list{columns:2;column-gap:44px;margin-top:32px}
+.amen-list div{break-inside:avoid;padding:13px 0;border-bottom:1px solid var(--line);font-size:15px;display:flex;justify-content:space-between;gap:14px}
+.amen-list small{color:var(--stone);font-size:13px;white-space:nowrap}
+.amen-fig{min-height:440px;height:100%}
+
+/* offers */
+.offers{background:var(--forest);color:#fff}
+.offers h2{color:#fff}
+.offers .sec-mark{color:var(--brass-soft)}
+.offers .lede{color:#B7C8BB}
+.offer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,2.4vw,32px);margin-top:52px}
+.offer{display:flex;flex-direction:column;border-top:1px solid var(--line-dark);padding-top:24px}
+.offer .ph{aspect-ratio:4/2.7;margin-bottom:24px}
+.offer h3{font-size:25px;font-weight:400;margin-bottom:12px}
+.offer p{color:#B1C5B5;font-size:15px;flex:1}
+.offer-code{display:inline-flex;align-items:center;gap:11px;border:1px dashed var(--brass-soft);padding:9px 14px;font-size:12.5px;letter-spacing:.13em;color:var(--brass-soft);margin:6px 0 18px;align-self:flex-start}
+.offer-code b{color:#fff;letter-spacing:.16em;font-weight:600}
+.offer-terms{font-size:12px;color:#7C9481;margin-top:14px;line-height:1.55}
+.offer .btn{align-self:flex-start;border-color:rgba(255,255,255,.35)}
+.offer .btn:hover{background:#fff;color:var(--forest)}
+
+/* split */
+.split{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+.split-fig{min-height:470px;height:100%}
+.split-body{background:var(--parchment);padding:clamp(36px,5.5vw,84px);display:flex;flex-direction:column;justify-content:center}
+.hours{margin-top:28px;font-size:14.5px}
+.hours div{display:flex;justify-content:space-between;gap:20px;padding:10px 0;border-bottom:1px solid var(--line)}
+.hours span{color:var(--stone);text-align:right}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:12px;margin-top:48px}
+.gal button{padding:0}
+.gal .ph{width:100%;height:100%}
+.gal img{transition:transform .7s cubic-bezier(.2,.7,.3,1)}
+.gal button:hover img{transform:scale(1.05)}
+.gal .tall{grid-row:span 2}
+.gal .wide{grid-column:span 2}
+
+/* neighbourhood */
+.hood{background:var(--parchment)}
+.hood-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,84px);align-items:center}
+.dist{border-top:1px solid var(--line);margin-top:34px}
+.dist div{display:grid;grid-template-columns:1fr auto auto;gap:20px;align-items:baseline;padding:15px 0;border-bottom:1px solid var(--line);font-size:15px}
+.dist .km{color:var(--stone);font-size:14px;text-align:right;min-width:62px}
+.dist .mins{font-family:var(--display);font-size:15px;color:var(--forest-2);min-width:88px;text-align:right}
+.hood-fig{aspect-ratio:4/3.4}
+
+/* ratings */
+.rate-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,44px);margin-top:44px}
+.rate-strip article{border-top:1px solid var(--line);padding-top:24px}
+.rate-strip .score{font-family:var(--display);font-size:46px;font-weight:400;line-height:1;letter-spacing:-.02em}
+.rate-strip .score small{font-size:17px;color:var(--stone);margin-left:4px}
+.rate-strip .src{font-size:13.5px;color:var(--stone);margin-top:10px}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,44px);margin-top:56px}
+.trust article{border-top:1px solid var(--line);padding-top:24px}
+.trust h3{font-size:20px;font-weight:400;margin-bottom:10px}
+.trust p{font-size:15px;color:#3B463D;margin:0}
+
+/* band */
+.band{position:relative;padding:clamp(80px,10vw,148px) 0;color:#fff;text-align:center}
+.band .ph{position:absolute;inset:0}
+.band .ph::before{content:"";position:absolute;inset:0;z-index:2;background:rgba(12,26,20,.7)}
+.band .wrap{position:relative;z-index:3}
+.band h2{max-width:20ch;margin:0 auto 22px}
+.band p{color:#C2D3C6;max-width:48ch;margin:0 auto 34px}
+
+/* footer */
+footer{background:var(--forest);color:#B1C5B5;padding:clamp(56px,7vw,94px) 0 32px;font-size:14.5px}
+.f-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:clamp(28px,4vw,60px);padding-bottom:52px;border-bottom:1px solid var(--line-dark)}
+footer .brand{color:#fff;margin-bottom:20px}
+.f-col h4{color:#fff;font-family:var(--ui);font-size:11.5px;letter-spacing:.24em;font-weight:600;margin-bottom:18px}
+.f-col a{display:block;padding:5px 0;transition:color .2s}
+.f-col a:hover{color:#fff}
+.f-news input{width:100%;background:transparent;border:0;border-bottom:1px solid var(--line-dark);padding:11px 0;color:#fff;font:inherit;font-size:15px}
+.f-news input::placeholder{color:#7C9481}
+.f-news button{margin-top:18px;border:1px solid var(--brass-soft);color:var(--brass-soft);padding:11px 22px;font-size:12.5px;letter-spacing:.14em;transition:background .25s,color .25s}
+.f-news button:hover{background:var(--brass-soft);color:var(--forest)}
+.f-bot{display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;padding-top:28px;font-size:13px;color:#7C9481}
+.f-bot a:hover{color:#fff}
+.f-legal{display:flex;gap:24px;flex-wrap:wrap}
+.pays{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.pays span{border:1px solid var(--line-dark);padding:5px 10px;font-size:10.5px;letter-spacing:.1em}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(10,20,15,.95);z-index:100;display:none;align-items:center;justify-content:center;padding:36px}
+.lb.open{display:flex}
+.lb img{max-width:92vw;max-height:86vh;object-fit:contain}
+.lb-close{position:absolute;top:24px;right:28px;color:#fff;font-size:26px;line-height:1;padding:8px}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);color:#fff;font-size:30px;padding:16px}
+.lb-prev{left:14px}.lb-next{right:14px}
+
+/* mobile nav */
+.mnav{position:fixed;inset:0;background:var(--forest);color:#fff;z-index:90;display:none;flex-direction:column;padding:26px var(--pad);overflow:auto}
+.mnav.open{display:flex}
+.mnav-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:34px}
+.mnav a{font-family:var(--display);font-size:28px;font-weight:300;padding:12px 0;display:block;border-bottom:1px solid var(--line-dark)}
+.mnav .m-foot{margin-top:auto;padding-top:28px;font-size:14px;color:#93A99A}
+
+@media(max-width:1080px){
+  .nav{display:none}.burger{display:flex}
+  .bookbar{grid-template-columns:1fr 1fr}
+  .bf-go{grid-column:1/-1;padding:20px}
+  .offer-grid{grid-template-columns:1fr 1fr}
+  .amen-list{columns:1}
+  .trust{grid-template-columns:1fr 1fr}
+}
+@media(max-width:860px){
+  .hdr-act .tel,.hdr-act .signin{display:none}
+  .intro,.amen,.split,.hood-grid{grid-template-columns:1fr}
+  .amen-fig,.split-fig{min-height:300px}
+  .room{grid-template-columns:1fr;gap:22px}
+  .room:nth-of-type(even) .room-fig{order:0}
+  .gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
+  .f-top{grid-template-columns:1fr 1fr}
+  .cal-wrap{flex-direction:column;gap:24px}
+  .pop{left:0;right:0;min-width:0}
+  .rate-strip{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .bookbar{grid-template-columns:1fr}
+  .bf{border-right:0;border-bottom:1px solid var(--line-dark)}
+  .offer-grid,.trust,.f-top{grid-template-columns:1fr}
+  .rooms-head{flex-direction:column;align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .est,.hero h1,.hero-lede{opacity:1}
+  .ph img{opacity:1}
+}
+
+/* self-contained artwork behind every photo slot */
+.ph .art{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
+.ph img{z-index:1}
+.ph.noimg::after{opacity:1}
+.hero .ph::after,.band .ph::after{display:none}
+</style>
+</head>
+<body>
+
+<svg id="art-sprite" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+<defs>
+  <linearGradient id="gDusk" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#2E5A46"/><stop offset=".55" stop-color="#1C3D2F"/><stop offset="1" stop-color="#12281F"/>
+  </linearGradient>
+  <linearGradient id="gDay" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#3A6E55"/><stop offset="1" stop-color="#1B3D2E"/>
+  </linearGradient>
+  <linearGradient id="gWarm" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#F3ECDD"/><stop offset="1" stop-color="#DFD2B8"/>
+  </linearGradient>
+  <linearGradient id="gGlow" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#F0D49A"/><stop offset="1" stop-color="#C6A868"/>
+  </linearGradient>
+  <linearGradient id="gFloor" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#2A5741"/><stop offset="1" stop-color="#12281F"/>
+  </linearGradient>
+
+  <g id="palm">
+    <path d="M0 0 q6 -70 2 -150" stroke="#0F241B" stroke-width="11" fill="none" stroke-linecap="round"/>
+    <g fill="#0F241B">
+      <path d="M2 -150 q-60 -14 -96 22 q52 -6 96 -8Z"/>
+      <path d="M2 -150 q60 -14 96 22 q-52 -6 -96 -8Z"/>
+      <path d="M2 -152 q-44 -50 -104 -50 q56 24 104 62Z"/>
+      <path d="M2 -152 q44 -50 104 -50 q-56 24 -104 62Z"/>
+      <path d="M2 -154 q-8 -58 -46 -84 q22 52 46 90Z"/>
+      <path d="M2 -154 q8 -58 46 -84 q-22 52 -46 90Z"/>
+    </g>
+  </g>
+
+  <g id="archWin">
+    <path d="M0 130 L0 34 a30 30 0 0 1 60 0 L60 130 Z" fill="#173328"/>
+    <path d="M9 130 L9 40 a21 21 0 0 1 42 0 L51 130 Z" fill="url(#gGlow)"/>
+    <rect x="27" y="40" width="4" height="90" fill="#173328" opacity=".55"/>
+  </g>
+
+  <g id="chairSide">
+    <rect x="0" y="0" width="8" height="54" fill="#173328"/>
+    <rect x="46" y="0" width="8" height="54" fill="#173328"/>
+    <rect x="-4" y="-14" width="62" height="16" rx="4" fill="#2A4A38"/>
+    <rect x="-2" y="-72" width="12" height="60" rx="5" fill="#2A4A38"/>
+  </g>
+</defs>
+
+<!-- ============ ARRIVAL / FACADE ============ -->
+<symbol id="sc-arrival" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="url(#gDusk)"/>
+  <circle cx="980" cy="140" r="44" fill="#C6A868" opacity=".8"/>
+  <circle cx="962" cy="128" r="44" fill="#1C3D2F" opacity=".85"/>
+  <path d="M0 452 L190 392 L350 448 L540 386 L720 444 L920 396 L1200 456 L1200 800 L0 800Z" fill="#10261D" opacity=".6"/>
+  <rect x="130" y="322" width="940" height="316" fill="url(#gWarm)"/>
+  <rect x="104" y="296" width="992" height="30" fill="#173328"/>
+  <rect x="130" y="326" width="940" height="10" fill="#D9CDB4"/>
+  <g transform="translate(232,470)"><use href="#archWin"/></g>
+  <g transform="translate(352,470)"><use href="#archWin"/></g>
+  <g transform="translate(792,470)"><use href="#archWin"/></g>
+  <g transform="translate(912,470)"><use href="#archWin"/></g>
+  <path d="M534 638 L534 466 a66 66 0 0 1 132 0 L666 638 Z" fill="#173328"/>
+  <path d="M552 638 L552 474 a48 48 0 0 1 96 0 L648 638 Z" fill="url(#gGlow)"/>
+  <path d="M498 432 L702 432 L724 400 L476 400 Z" fill="#6E2A2A"/>
+  <rect x="476" y="396" width="248" height="8" fill="#4E1D1D"/>
+  <rect x="596" y="240" width="8" height="60" fill="#C6A868"/>
+  <rect x="556" y="196" width="88" height="48" rx="3" fill="#173328"/>
+  <rect x="564" y="204" width="72" height="32" rx="2" fill="#C6A868" opacity=".9"/>
+  <g transform="translate(120,700) scale(1.15)"><use href="#palm"/></g>
+  <g transform="translate(1090,720) scale(1.3)"><use href="#palm"/></g>
+  <rect y="638" width="1200" height="162" fill="#0D2018"/>
+  <rect y="638" width="1200" height="6" fill="#1F4232"/>
+  <path d="M300 720 q10 -46 58 -50 l84 -4 q34 -30 84 -30 l70 2 q40 4 58 32 l52 6 q28 6 30 44 Z" fill="#132C21"/>
+  <circle cx="392" cy="722" r="26" fill="#0A1913"/><circle cx="392" cy="722" r="10" fill="#2A4A38"/>
+  <circle cx="646" cy="722" r="26" fill="#0A1913"/><circle cx="646" cy="722" r="10" fill="#2A4A38"/>
+  <path d="M470 662 q42 -22 96 -20 l40 2 q26 12 40 26 Z" fill="#C6A868" opacity=".35"/>
+</symbol>
+
+<!-- ============ ROOM (KING) ============ -->
+<symbol id="sc-room" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#EFE7D6"/>
+  <rect y="560" width="1200" height="240" fill="#DCCFB4"/>
+  <rect y="552" width="1200" height="12" fill="#173328"/>
+  <rect x="860" y="120" width="260" height="380" rx="4" fill="#173328"/>
+  <rect x="876" y="136" width="228" height="348" fill="url(#gGlow)"/>
+  <rect x="984" y="136" width="10" height="348" fill="#173328" opacity=".6"/>
+  <rect x="876" y="296" width="228" height="8" fill="#173328" opacity=".45"/>
+  <path d="M876 484 L1104 484 L1160 640 L820 640 Z" fill="#F5DFAE" opacity=".45"/>
+  <path d="M300 470 L300 250 a150 90 0 0 1 300 0 L600 470 Z" fill="#22493A"/>
+  <path d="M320 470 L320 262 a130 78 0 0 1 260 0 L580 470 Z" fill="#2C5A46"/>
+  <rect x="318" y="330" width="264" height="5" fill="#C6A868" opacity=".5"/>
+  <rect x="318" y="392" width="264" height="5" fill="#C6A868" opacity=".5"/>
+  <rect x="262" y="470" width="376" height="120" rx="6" fill="#F7F2E6"/>
+  <rect x="262" y="530" width="376" height="60" rx="6" fill="#6E2A2A"/>
+  <rect x="262" y="524" width="376" height="10" fill="#8A3A3A"/>
+  <rect x="304" y="440" width="120" height="52" rx="10" fill="#FFFDF6"/>
+  <rect x="452" y="440" width="120" height="52" rx="10" fill="#FFFDF6"/>
+  <rect x="344" y="452" width="90" height="34" rx="8" fill="#E7DCC4"/>
+  <rect x="278" y="590" width="26" height="46" fill="#173328"/>
+  <rect x="596" y="590" width="26" height="46" fill="#173328"/>
+  <rect x="676" y="512" width="118" height="14" fill="#173328"/>
+  <rect x="692" y="526" width="14" height="86" fill="#173328"/>
+  <rect x="764" y="526" width="14" height="86" fill="#173328"/>
+  <rect x="712" y="446" width="10" height="66" fill="#C6A868"/>
+  <path d="M686 446 L748 446 L738 396 L696 396 Z" fill="#F0D49A"/>
+  <circle cx="717" cy="470" r="52" fill="#F5DFAE" opacity=".28"/>
+  <rect x="120" y="470" width="14" height="122" fill="#173328"/>
+  <path d="M96 470 q31 -66 62 0 Z" fill="#2C5A46"/>
+  <ellipse cx="127" cy="600" rx="34" ry="10" fill="#0F241B" opacity=".25"/>
+  <rect x="196" y="640" width="820" height="120" rx="4" fill="#2C5A46" opacity=".28"/>
+</symbol>
+
+<!-- ============ ROOM (TWIN) ============ -->
+<symbol id="sc-room-twin" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#EFE7D6"/>
+  <rect y="560" width="1200" height="240" fill="#DCCFB4"/>
+  <rect y="552" width="1200" height="12" fill="#173328"/>
+  <rect x="520" y="120" width="170" height="300" rx="4" fill="#173328"/>
+  <rect x="534" y="134" width="142" height="272" fill="url(#gGlow)"/>
+  <rect x="598" y="134" width="8" height="272" fill="#173328" opacity=".55"/>
+  <g>
+    <path d="M120 460 L120 292 a108 66 0 0 1 216 0 L336 460 Z" fill="#22493A"/>
+    <rect x="96" y="460" width="264" height="104" rx="6" fill="#F7F2E6"/>
+    <rect x="96" y="512" width="264" height="52" rx="6" fill="#6E2A2A"/>
+    <rect x="130" y="434" width="88" height="44" rx="9" fill="#FFFDF6"/>
+    <rect x="234" y="434" width="88" height="44" rx="9" fill="#FFFDF6"/>
+    <rect x="106" y="564" width="22" height="40" fill="#173328"/>
+    <rect x="328" y="564" width="22" height="40" fill="#173328"/>
+  </g>
+  <g transform="translate(744,0)">
+    <path d="M120 460 L120 292 a108 66 0 0 1 216 0 L336 460 Z" fill="#22493A"/>
+    <rect x="96" y="460" width="264" height="104" rx="6" fill="#F7F2E6"/>
+    <rect x="96" y="512" width="264" height="52" rx="6" fill="#6E2A2A"/>
+    <rect x="130" y="434" width="88" height="44" rx="9" fill="#FFFDF6"/>
+    <rect x="234" y="434" width="88" height="44" rx="9" fill="#FFFDF6"/>
+    <rect x="106" y="564" width="22" height="40" fill="#173328"/>
+    <rect x="328" y="564" width="22" height="40" fill="#173328"/>
+  </g>
+  <rect x="546" y="470" width="118" height="14" fill="#173328"/>
+  <rect x="560" y="484" width="14" height="86" fill="#173328"/>
+  <rect x="634" y="484" width="14" height="86" fill="#173328"/>
+  <rect x="598" y="410" width="10" height="60" fill="#C6A868"/>
+  <path d="M572 410 L634 410 L624 362 L582 362 Z" fill="#F0D49A"/>
+  <circle cx="603" cy="432" r="48" fill="#F5DFAE" opacity=".26"/>
+  <rect x="150" y="648" width="900" height="112" rx="4" fill="#2C5A46" opacity=".26"/>
+</symbol>
+
+<!-- ============ COURTYARD WALKWAY ============ -->
+<symbol id="sc-courtyard" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="url(#gDay)"/>
+  <rect y="520" width="1200" height="280" fill="url(#gFloor)"/>
+  <rect x="0" y="150" width="1200" height="372" fill="url(#gWarm)"/>
+  <rect x="0" y="150" width="1200" height="22" fill="#173328"/>
+  <g fill="#173328">
+    <path d="M60 520 L60 300 a70 70 0 0 1 140 0 L200 520 L164 520 L164 306 a34 34 0 0 0 -68 0 L96 520 Z"/>
+    <path d="M300 520 L300 300 a70 70 0 0 1 140 0 L440 520 L404 520 L404 306 a34 34 0 0 0 -68 0 L336 520 Z"/>
+    <path d="M540 520 L540 300 a70 70 0 0 1 140 0 L680 520 L644 520 L644 306 a34 34 0 0 0 -68 0 L576 520 Z"/>
+    <path d="M780 520 L780 300 a70 70 0 0 1 140 0 L920 520 L884 520 L884 306 a34 34 0 0 0 -68 0 L816 520 Z"/>
+    <path d="M1020 520 L1020 300 a70 70 0 0 1 140 0 L1160 520 L1124 520 L1124 306 a34 34 0 0 0 -68 0 L1056 520 Z"/>
+  </g>
+  <g fill="#0F241B" opacity=".5">
+    <rect x="96" y="330" width="68" height="190"/><rect x="336" y="330" width="68" height="190"/>
+    <rect x="576" y="330" width="68" height="190"/><rect x="816" y="330" width="68" height="190"/>
+    <rect x="1056" y="330" width="68" height="190"/>
+  </g>
+  <g fill="#F5DFAE" opacity=".22">
+    <path d="M96 520 L164 520 L214 800 L36 800Z"/>
+    <path d="M576 520 L644 520 L706 800 L512 800Z"/>
+    <path d="M1056 520 L1124 520 L1200 800 L992 800Z"/>
+  </g>
+  <g fill="#173328">
+    <rect x="238" y="452" width="66" height="68" rx="4"/>
+    <rect x="716" y="452" width="66" height="68" rx="4"/>
+  </g>
+  <g fill="#2C5A46">
+    <circle cx="271" cy="428" r="44"/><circle cx="243" cy="446" r="28"/><circle cx="300" cy="446" r="28"/>
+    <circle cx="749" cy="428" r="44"/><circle cx="721" cy="446" r="28"/><circle cx="778" cy="446" r="28"/>
+  </g>
+  <g stroke="#0F241B" stroke-width="3" opacity=".35">
+    <path d="M0 600 H1200"/><path d="M0 690 H1200"/><path d="M0 790 H1200"/>
+    <path d="M180 520 L120 800"/><path d="M480 520 L440 800"/><path d="M720 520 L760 800"/><path d="M1020 520 L1080 800"/>
+  </g>
+</symbol>
+
+<!-- ============ LIBRARY / BREAKFAST ============ -->
+<symbol id="sc-library" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#22493A"/>
+  <rect y="596" width="1200" height="204" fill="#173328"/>
+  <rect x="60" y="120" width="420" height="470" fill="#1B3D2E"/>
+  <g fill="#173328"><rect x="60" y="120" width="420" height="14"/></g>
+  <g>
+    <rect x="80" y="180" width="380" height="10" fill="#C6A868" opacity=".6"/>
+    <rect x="80" y="300" width="380" height="10" fill="#C6A868" opacity=".6"/>
+    <rect x="80" y="420" width="380" height="10" fill="#C6A868" opacity=".6"/>
+    <g fill="#EFE7D6" opacity=".85">
+      <rect x="92" y="140" width="13" height="40"/><rect x="110" y="146" width="10" height="34"/>
+      <rect x="125" y="138" width="16" height="42"/><rect x="146" y="150" width="11" height="30"/>
+      <rect x="162" y="142" width="14" height="38"/><rect x="182" y="148" width="9" height="32"/>
+      <rect x="92" y="262" width="12" height="38"/><rect x="109" y="256" width="15" height="44"/>
+      <rect x="129" y="266" width="10" height="34"/><rect x="144" y="258" width="14" height="42"/>
+      <rect x="92" y="382" width="15" height="38"/><rect x="112" y="376" width="11" height="44"/>
+      <rect x="128" y="386" width="13" height="34"/>
+    </g>
+    <g fill="#6E2A2A" opacity=".9">
+      <rect x="198" y="144" width="14" height="36"/><rect x="217" y="150" width="10" height="30"/>
+      <rect x="164" y="264" width="12" height="36"/><rect x="181" y="258" width="15" height="42"/>
+      <rect x="147" y="380" width="14" height="40"/>
+    </g>
+  </g>
+  <rect x="880" y="140" width="250" height="330" rx="4" fill="#173328"/>
+  <rect x="896" y="156" width="218" height="298" fill="url(#gGlow)"/>
+  <rect x="1000" y="156" width="10" height="298" fill="#173328" opacity=".55"/>
+  <g stroke="#C6A868" stroke-width="4">
+    <path d="M470 120 V236"/><path d="M660 120 V206"/><path d="M850 120 V236"/>
+  </g>
+  <g fill="#C6A868">
+    <path d="M430 236 L510 236 L494 282 L446 282 Z"/>
+    <path d="M620 206 L700 206 L684 252 L636 252 Z"/>
+    <path d="M810 236 L890 236 L874 282 L826 282 Z"/>
+  </g>
+  <g fill="#F5DFAE" opacity=".22">
+    <circle cx="470" cy="300" r="70"/><circle cx="660" cy="270" r="70"/><circle cx="850" cy="300" r="70"/>
+  </g>
+  <g transform="translate(390,596)"><use href="#chairSide"/></g>
+  <g transform="translate(560,596)"><use href="#chairSide"/></g>
+  <g transform="translate(730,596)"><use href="#chairSide"/></g>
+  <path d="M330 500 L1010 500 L1070 560 L270 560 Z" fill="#3A2A1E"/>
+  <path d="M330 500 L1010 500 L1016 512 L324 512 Z" fill="#5A4330"/>
+  <rect x="270" y="560" width="800" height="16" fill="#241A12"/>
+  <rect x="330" y="576" width="20" height="60" fill="#241A12"/>
+  <rect x="990" y="576" width="20" height="60" fill="#241A12"/>
+  <g fill="#EFE7D6">
+    <circle cx="470" cy="524" r="17"/><circle cx="660" cy="524" r="17"/><circle cx="850" cy="524" r="17"/>
+  </g>
+  <g fill="#C6A868">
+    <rect x="556" y="470" width="10" height="34"/><path d="M548 470 h26 l-4 -22 h-18 Z"/>
+    <rect x="756" y="474" width="10" height="30"/><path d="M748 474 h26 l-4 -20 h-18 Z"/>
+  </g>
+</symbol>
+
+<!-- ============ BATH ============ -->
+<symbol id="sc-bath" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#EFE7D6"/>
+  <g stroke="#DCCFB4" stroke-width="3">
+    <path d="M0 120 H1200"/><path d="M0 240 H1200"/><path d="M0 360 H1200"/><path d="M0 480 H1200"/>
+    <path d="M150 0 V560"/><path d="M300 0 V560"/><path d="M450 0 V560"/><path d="M600 0 V560"/>
+    <path d="M750 0 V560"/><path d="M900 0 V560"/><path d="M1050 0 V560"/>
+  </g>
+  <rect y="560" width="1200" height="240" fill="#22493A"/>
+  <rect y="552" width="1200" height="14" fill="#173328"/>
+  <rect x="760" y="110" width="290" height="330" rx="4" fill="#173328"/>
+  <rect x="776" y="126" width="258" height="298" fill="url(#gGlow)"/>
+  <rect x="898" y="126" width="10" height="298" fill="#173328" opacity=".55"/>
+  <path d="M776 424 L1034 424 L1120 620 L700 620 Z" fill="#F5DFAE" opacity=".3"/>
+  <path d="M240 400 q-6 -90 44 -140 q-14 84 -20 140 Z" fill="#2C5A46"/>
+  <path d="M244 402 q-70 -40 -104 -18 q60 6 100 24 Z" fill="#22493A"/>
+  <path d="M248 400 q56 -54 106 -40 q-58 20 -100 46 Z" fill="#2C5A46"/>
+  <rect x="222" y="400" width="58" height="60" rx="5" fill="#173328"/>
+  <rect x="216" y="394" width="70" height="14" rx="3" fill="#C6A868"/>
+  <path d="M330 452 q4 -26 30 -26 h260 q26 0 30 26 l14 96 q4 34 -34 34 H350 q-38 0 -34 -34 Z" fill="#FBF8F1"/>
+  <path d="M348 466 q2 -18 22 -18 h240 q20 0 22 18 l10 74 q2 22 -24 22 H362 q-26 0 -24 -22 Z" fill="#E4EFE9"/>
+  <g fill="#173328">
+    <rect x="366" y="582" width="16" height="34"/><rect x="598" y="582" width="16" height="34"/>
+  </g>
+  <rect x="470" y="380" width="12" height="76" fill="#C6A868"/>
+  <path d="M446 380 h60 q-6 -30 -30 -30 t-30 30 Z" fill="#C6A868"/>
+  <rect x="700" y="430" width="14" height="176" fill="#173328"/>
+  <rect x="676" y="430" width="62" height="12" rx="4" fill="#173328"/>
+  <rect x="682" y="442" width="22" height="90" rx="4" fill="#FBF8F1"/>
+  <rect x="710" y="442" width="22" height="76" rx="4" fill="#E4EFE9"/>
+  <ellipse cx="480" cy="630" rx="210" ry="16" fill="#0F241B" opacity=".22"/>
+</symbol>
+
+<!-- ============ STREET / BOULEVARD ============ -->
+<symbol id="sc-street" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="url(#gDay)"/>
+  <circle cx="250" cy="160" r="52" fill="#F0D49A" opacity=".45"/>
+  <path d="M0 400 L160 320 L300 392 L470 306 L640 388 L820 322 L1000 396 L1200 336 L1200 520 L0 520Z" fill="#12291F" opacity=".55"/>
+  <rect y="470" width="1200" height="120" fill="#1B3D2E"/>
+  <g fill="url(#gWarm)">
+    <rect x="40" y="360" width="230" height="180"/>
+    <rect x="300" y="316" width="180" height="224"/>
+    <rect x="510" y="386" width="270" height="154"/>
+    <rect x="810" y="340" width="200" height="200"/>
+    <rect x="1040" y="392" width="160" height="148"/>
+  </g>
+  <g fill="#173328">
+    <rect x="40" y="352" width="230" height="14"/><rect x="300" y="308" width="180" height="14"/>
+    <rect x="510" y="378" width="270" height="14"/><rect x="810" y="332" width="200" height="14"/>
+    <rect x="1040" y="384" width="160" height="14"/>
+  </g>
+  <g fill="#173328">
+    <rect x="70" y="400" width="42" height="60"/><rect x="132" y="400" width="42" height="60"/><rect x="194" y="400" width="42" height="60"/>
+    <rect x="330" y="356" width="48" height="66"/><rect x="398" y="356" width="48" height="66"/>
+    <rect x="546" y="424" width="46" height="58"/><rect x="612" y="424" width="46" height="58"/><rect x="678" y="424" width="46" height="58"/>
+    <rect x="842" y="380" width="52" height="64"/><rect x="918" y="380" width="52" height="64"/>
+    <rect x="1074" y="430" width="46" height="52"/>
+  </g>
+  <g fill="url(#gGlow)" opacity=".85">
+    <rect x="76" y="406" width="30" height="48"/><rect x="200" y="406" width="30" height="48"/>
+    <rect x="404" y="362" width="36" height="54"/>
+    <rect x="618" y="430" width="34" height="46"/>
+    <rect x="848" y="386" width="40" height="52"/>
+  </g>
+  <rect x="586" y="180" width="18" height="210" fill="#173328"/>
+  <rect x="540" y="150" width="110" height="150" rx="4" fill="#173328"/>
+  <rect x="552" y="162" width="86" height="126" rx="2" fill="#C6A868"/>
+  <g fill="#173328">
+    <rect x="572" y="180" width="46" height="9"/><rect x="572" y="200" width="46" height="9"/>
+    <rect x="572" y="220" width="46" height="9"/><rect x="572" y="240" width="46" height="9"/>
+    <rect x="572" y="260" width="46" height="9"/>
+  </g>
+  <g transform="translate(140,620) scale(1.25)"><use href="#palm"/></g>
+  <g transform="translate(470,600) scale(1.05)"><use href="#palm"/></g>
+  <g transform="translate(1060,640) scale(1.4)"><use href="#palm"/></g>
+  <rect y="590" width="1200" height="210" fill="#0D2018"/>
+  <g fill="#C6A868" opacity=".55">
+    <rect x="60" y="694" width="110" height="9"/><rect x="270" y="694" width="110" height="9"/>
+    <rect x="480" y="694" width="110" height="9"/><rect x="690" y="694" width="110" height="9"/>
+    <rect x="900" y="694" width="110" height="9"/><rect x="1110" y="694" width="90" height="9"/>
+  </g>
+  <rect y="584" width="1200" height="8" fill="#2C5A46"/>
+</symbol>
+</svg>
+
+
+<div class="notice" id="notice">
+  <span><b>Design mockup</b> &nbsp;Imagery is placeholder artwork built into this file; final photography replaces it. Rates, availability and dates are illustrative and not connected to a booking system.</span>
+  <button onclick="document.getElementById('notice').remove()" aria-label="Dismiss">&times;</button>
+</div>
+
+<header class="hdr" id="hdr">
+  <div class="hdr-top">
+    <a class="brand" href="#top">
+      <span class="mark">EL ROYALE</span>
+      <span class="sub">STUDIO CITY &nbsp;&middot;&nbsp; EST. 1940</span>
+    </a>
+    <nav class="nav">
+      <a href="#rooms">Rooms &amp; Cottages</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#offers">Offers</a>
+      <a href="#breakfast">Breakfast</a>
+      <a href="#hood">The Neighbourhood</a>
+      <a href="#gallery">Gallery</a>
+    </nav>
+    <div class="hdr-act">
+      <a class="tel" href="tel:+18180000000">(818) 000-0000</a>
+      <a class="signin" href="#">Sign in</a>
+      <a class="btn btn-solid" href="#book">BOOK</a>
+      <button class="burger" id="burger" aria-label="Open menu"><i></i><i></i><i></i></button>
+    </div>
+  </div>
+</header>
+
+<div class="mnav" id="mnav">
+  <div class="mnav-top">
+    <span class="brand"><span class="mark">EL ROYALE</span></span>
+    <button id="mclose" aria-label="Close menu" style="font-size:26px;line-height:1">&times;</button>
+  </div>
+  <a href="#rooms">Rooms &amp; Cottages</a>
+  <a href="#amenities">Amenities</a>
+  <a href="#offers">Offers</a>
+  <a href="#breakfast">Breakfast</a>
+  <a href="#hood">The Neighbourhood</a>
+  <a href="#gallery">Gallery</a>
+  <div class="m-foot">(818) 000-0000<br>11117 Ventura Blvd, Studio City, CA 91604</div>
+</div>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="ph" data-cap="THE HOTEL ON VENTURA BOULEVARD">
+<svg class="art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><use href="#sc-street"/></svg>
+      <img src="https://images.unsplash.com/photo-1522255272218-7ac5249be344?fm=jpg&q=75&w=2000&auto=format&fit=crop&ixlib=rb-4.1.0"
+           data-seed="royale-hero" data-w="2000" data-h="1200"
+           alt="A car pulled up at the hotel entrance in the evening">
+    </div>
+    <div class="hero-inner">
+      <span class="est rise d1">SINCE 1940</span>
+      <h1 class="rise d2">Fourteen rooms, <em>one gated courtyard</em>, half a mile from Universal</h1>
+      <p class="hero-lede rise d3">A 1940 Colonial hotel on Ventura Boulevard, kept small on purpose. Park under your own carport, walk to the studios, and sleep somewhere that is not a chain.</p>
+    </div>
+  </section>
+
+  <!-- BOOKING BAR -->
+  <div class="bookbar-hold" id="book">
+    <div class="bookbar" id="bookbar">
+      <button class="bf" id="fArrive" aria-haspopup="dialog">
+        <span class="bf-label">ARRIVE</span><span class="bf-val" id="vArrive">Select date</span>
+      </button>
+      <button class="bf" id="fDepart" aria-haspopup="dialog">
+        <span class="bf-label">DEPART</span><span class="bf-val" id="vDepart">Select date <small id="vNights"></small></span>
+      </button>
+      <button class="bf" id="fGuests" aria-haspopup="dialog">
+        <span class="bf-label">GUESTS</span><span class="bf-val" id="vGuests">2 adults, 1 room</span>
+      </button>
+      <button class="bf" id="fCode" aria-haspopup="dialog">
+        <span class="bf-label">RATE CODE</span><span class="bf-val" id="vCode">Add code</span>
+      </button>
+      <button class="bf bf-go" id="goSearch">SEE RATES</button>
+      <div class="bf-hint">
+        <span class="dot"></span>
+        Only fourteen rooms, so the calendar here is the whole truth. Booking direct is always the lowest rate.
+      </div>
+
+      <div class="pop" id="popCal" role="dialog" aria-label="Choose dates" style="width:min(680px,calc(100vw - 32px))">
+        <div class="cal-wrap">
+          <div>
+            <div class="cal-head"><button class="cal-nav" id="calPrev" aria-label="Previous month">&#8249;</button><strong id="calT1"></strong><span style="width:26px"></span></div>
+            <table class="cal" id="cal1"></table>
+          </div>
+          <div>
+            <div class="cal-head"><span style="width:26px"></span><strong id="calT2"></strong><button class="cal-nav" id="calNext" aria-label="Next month">&#8250;</button></div>
+            <table class="cal" id="cal2"></table>
+          </div>
+        </div>
+        <div class="cal-foot" id="calFoot">Pick your arrival date. Two-night minimum on Friday and Saturday.</div>
+      </div>
+
+      <div class="pop" id="popGuests" role="dialog" aria-label="Choose guests" style="width:340px">
+        <div class="stepper"><span class="lbl">Rooms</span>
+          <span class="steps"><button data-step="rooms" data-d="-1">&minus;</button><span id="nRooms">1</span><button data-step="rooms" data-d="1">+</button></span></div>
+        <div class="stepper"><span class="lbl">Adults</span>
+          <span class="steps"><button data-step="adults" data-d="-1">&minus;</button><span id="nAdults">2</span><button data-step="adults" data-d="1">+</button></span></div>
+        <div class="stepper"><span class="lbl">Children<small>Under 12 stay free</small></span>
+          <span class="steps"><button data-step="kids" data-d="-1">&minus;</button><span id="nKids">0</span><button data-step="kids" data-d="1">+</button></span></div>
+      </div>
+
+      <div class="pop" id="popCode" role="dialog" aria-label="Add a rate code" style="right:0;left:auto;width:330px">
+        <input class="code-in" id="codeIn" placeholder="Promotion or corporate code" aria-label="Rate code">
+        <p class="code-note">We also honour AAA and CAA, senior and AARP, US military and law enforcement, travel agent (IATA) and production company rates. Codes needing proof are checked at the front desk.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section class="wrap">
+    <div class="intro">
+      <div>
+        <p class="sec-mark">THE HOTEL</p>
+        <h2>Built in 1940, and deliberately never made bigger</h2>
+        <p class="lede" style="margin-top:24px">El Royale has stood on Ventura Boulevard since 1940, a single-storey Colonial building wrapped around a private courtyard. Fourteen rooms, external walkways, parquet floors, and a front desk that has never closed. The studios grew up around it. We stayed the same size.</p>
+        <dl class="facts">
+          <div class="fact"><dt>Rooms</dt><dd>14 rooms and cottages, all on one floor</dd></div>
+          <div class="fact"><dt>Built</dt><dd>1940, original Colonial architecture</dd></div>
+          <div class="fact"><dt>Check in</dt><dd>4:00 pm &nbsp;&middot;&nbsp; Check out 10:00 am</dd></div>
+          <div class="fact"><dt>Parking</dt><dd>Free, gated, private covered carport per room</dd></div>
+          <div class="fact"><dt>Breakfast</dt><dd>Continental, included, served daily</dd></div>
+          <div class="fact"><dt>Front desk</dt><dd>Open 24 hours, room service around the clock</dd></div>
+          <div class="fact"><dt>Smoking</dt><dd>Smoke-free throughout</dd></div>
+        </dl>
+      </div>
+      <div class="intro-figs">
+        <div class="ph" data-cap="THE LOUNGE">
+<svg class="art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#sc-library"/></svg>
+          <img src="https://images.unsplash.com/photo-1621293954908-907159247fc8?fm=jpg&q=75&w=900&auto=format&fit=crop&ixlib=rb-4.1.0"
+               data-seed="royale-lounge" data-w="900" data-h="1200" loading="lazy"
+               alt="The guest lounge with timber walls and low seating">
+        </div>
+        <div class="ph" data-cap="COURTYARD WALKWAY">
+<svg class="art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#sc-courtyard"/></svg>
+          <img src="https://images.unsplash.com/photo-1630587148265-761cbd139043?fm=jpg&q=75&w=900&auto=format&fit=crop&ixlib=rb-4.1.0"
+               data-seed="royale-walk" data-w="900" data-h="1200" loading="lazy"
+               alt="The external walkway running along the courtyard">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROOMS -->
+  <section class="rooms" id="rooms">
+    <div class="wrap">
+      <div class="rooms-head">
+        <div>
+          <p class="sec-mark">ROOMS &amp; COTTAGES</p>
+          <h2>Four ways to stay</h2>
+        </div>
+        <div>
+          <span class="dates-chip" id="datesChip"><span id="chipText"></span><button id="chipClear">CHANGE</button></span>
+        </div>
+      </div>
+
+      <div id="roomList">
+
+        <article class="room">
+          <div class="ph room-fig" data-cap="CLASSIC ROOM">
+<svg class="art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#sc-room"/></svg>
+            <span class="room-tag">MOST BOOKED</span>
+            <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?fm=jpg&q=75&w=1100&auto=format&fit=crop&ixlib=rb-4.1.0"
+                 data-seed="royale-r1" data-w="1100" data-h="780" loading="lazy"
+                 alt="Classic Room with a king bed and warm panelling">
+          </div>
+          <div>
+            <h3>Classic Room</h3>
+            <div class="room-specs"><span>250 sq ft</span><span>Sleeps 3</span><span>1 king bed</span><span>Parquet floors</span></div>
+            <p>The original room type, with a king bed, premium bedding and a small seating corner. Refrigerator, microwave and coffee maker as standard. Opens onto the courtyard walkway.</p>
+            <div class="room-foot">
+              <div class="price"><span class="from">FROM</span><span class="amt">$158</span><span class="per">/ night</span>
+                <span class="total" data-rate="158"></span></div>
+              <div class="room-cta"><span class="avail" data-left="4"></span><a class="btn btn-dark" href="#book">SELECT</a></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="room">
+          <div class="ph room-fig" data-cap="DELUXE QUEEN">
+<svg class="art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#sc-room"/></svg>
+            <span class="room-tag">QUIET SIDE</span>
+            <img src="https://images.unsplash.com/photo-1662385930165-49ebaa03b152?fm=jpg&q=75&w=1100&auto=format&fit=crop&ixlib=rb-4.1.0"
+                 data-seed="royale-r2" data-w="1100" data-h="780" loading="lazy"
+                 alt="Deluxe Queen room facing the garden">
+          </div>
+          <div>
+            <h3>Deluxe Queen</h3>
+            <div class="room-specs"><span>279 sq ft</span><span>Sleeps 2</span><span>1 queen bed</span><span>Garden facing</span></div>
+            <p>A little more room and a garden outlook rather than the boulevard. Ask for one of these if you are a light sleeper. Same kitchen amenities, plus a proper armchair and reading lamp.</p>
+            <div class="room-foot">
+              <div class="price"><span class="from">FROM</span><span class="amt">$175</span><span class="per">/ night</span>
+                <span class="total" data-rate="175"></span></div>
+              <div class="room-cta"><span class="avail" data-left="3"></span><a class="btn btn-dark" href="#book">SELECT</a></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="room">
+          <div class="ph room-fig" data-cap="CLASSIC DOUBLE">
+<svg class="art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#sc-room-twin"/></svg>
+            <span class="room-tag">FAMILIES</span>
+            <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?fm=jpg&q=75&w=1100&auto=format&fit=crop&ixlib=rb-4.1.0"
+                 data-seed="royale-r3" data-w="1100" data-h="780" loading="lazy"
+                 alt="Classic Double room with two queen beds">
+          </div>
+          <div>
+            <h3>Classic Double</h3>
+            <div class="room-specs"><span>335 sq ft</span><span>Sleeps 4</span><span>2 queen beds</span><span>Largest standard room</span></div>
+            <p>Two full queens and enough floor to open two suitcases at once. The room families take before a park day, with the fridge and microwave that make that day cheaper.</p>
+            <div class="room-foot">
+              <div class="price"><span class="from">FROM</span><span class="amt">$199</span><span class="per">/ night</span>
+                <span class="total" data-rate="199"></span></div>
+              <div class="room-cta"><span class="avail" data-left="2"></span><a class="btn btn-dark" href="#book">SELECT</a></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="room">
+          <div class="ph room-fig" data-cap="GARDEN COTTAGE">
+<svg class="art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#sc-bath"/></svg>
+            <span class="room-tag">LONG STAYS</span>
+            <img src="https://images.unsplash.com/photo-1518860308377-800f02d5498a?fm=jpg&q=75&w=1100&auto=format&fit=crop&ixlib=rb-4.1.0"
+                 data-seed="royale-r4" data-w="1100" data-h="780" loading="lazy"
+                 alt="Garden Cottage bathroom with a soaking tub">
+          </div>
+          <div>
+            <h3>Garden Cottage</h3>
+            <div class="room-specs"><span>Private entrance</span><span>Sleeps 2</span><span>Kitchenette</span><span>Spa bath</span><span>Weekly rates</span></div>
+            <p>Separate Parisian-style cottages off the courtyard, with their own door, a kitchenette and spa amenities. Built for the guest who is here for a production run rather than a weekend. Weekly and monthly rates on request.</p>
+            <div class="room-foot">
+              <div class="price"><span class="from">FROM</span><span class="amt">$265</span><span class="per">/ night</span>
+                <span class="total" data-rate="265"></span></div>
+              <div class="room-cta"><span class="avail" data-left="1"></span><a class="btn btn-dark" href="#book">SELECT</a></div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="rooms-more"><a href="#book">Staying a month or longer? Ask about the cottage rate</a></p>
+    </div>
+  </section>
+
+  <!-- AMENITIES -->
+  <section class="wrap" id="amenities">
+    <div class="amen">
+      <div>
+        <p class="sec-mark">AMENITIES</p>
+        <h2>What is here, and when it is open</h2>
+        <p class="lede" style="margin-top:22px">A fourteen-room hotel does not pretend to have a spa and a ballroom. What it does have is listed here, with the hours beside it, so nobody has to call the desk to find out.</p>
+        <div class="amen-list">
+          <div>Front desk <small>24 hours</small></div>
+          <div>Continental breakfast <small>Included, daily</small></div>
+          <div>Room service <small>24 hours</small></div>
+          <div>Gated parking, private carport <small>Free</small></div>
+          <div>Free WiFi throughout <small>All areas</small></div>
+          <div>Concierge and ticket desk <small>24 hours</small></div>
+          <div>Guest laundry <small>Self service</small></div>
+          <div>Dry cleaning and pressing <small>Same day</small></div>
+          <div>Library and lounge <small>24 hours</small></div>
+          <div>Courtyard garden <small>Open to guests</small></div>
+          <div>Luggage storage <small>Before and after stay</small></div>
+          <div>Front desk safe <small>On request</small></div>
+        </div>
+      </div>
+      <div class="ph amen-fig" data-cap="THE LIBRARY">
+<svg class="art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#sc-library"/></svg>
+        <img src="https://images.unsplash.com/photo-1676089775605-9de96f8e02f8?fm=jpg&q=75&w=1100&auto=format&fit=crop&ixlib=rb-4.1.0"
+             data-seed="royale-amen" data-w="1100" data-h="1300" loading="lazy"
+             alt="The long table in the library and breakfast room">
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFERS -->
+  <section class="offers" id="offers">
+    <div class="wrap">
+      <p class="sec-mark">OFFERS</p>
+      <h2>Three reasons to book here rather than anywhere else</h2>
+      <p class="lede" style="margin-top:20px">Each of these applies itself at checkout. You will not have to remember a code, and you will not find a lower rate on another site.</p>
+      <div class="offer-grid">
+
+        <article class="offer">
+          <div class="ph" data-cap="BOOK DIRECT">
+<svg class="art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#sc-street"/></svg>
+            <img src="https://images.unsplash.com/photo-1568229988520-4bc288da81f7?fm=jpg&q=75&w=900&auto=format&fit=crop&ixlib=rb-4.1.0"
+                 data-seed="royale-o1" data-w="900" data-h="610" loading="lazy"
+                 alt="The building façade in afternoon light">
+          </div>
+          <h3>Book direct, 10 percent off</h3>
+          <span class="offer-code">AUTOMATIC</span>
+          <p>Ten percent below every travel site, applied the moment you pick your dates. Find the same room cheaper elsewhere and we match it, then take the ten percent off that instead.</p>
+          <a class="btn" href="#book">SEE RATES</a>
+          <p class="offer-terms">Available only on this website. Not combinable with other offers.</p>
+        </article>
+
+        <article class="offer">
+          <div class="ph" data-cap="THE COTTAGE RATE">
+<svg class="art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#sc-bath"/></svg>
+            <img src="https://images.unsplash.com/photo-1561383818-ca5eee8c1d06?fm=jpg&q=75&w=900&auto=format&fit=crop&ixlib=rb-4.1.0"
+                 data-seed="royale-o2" data-w="900" data-h="610" loading="lazy"
+                 alt="The frontage under a clear California sky">
+          </div>
+          <h3>Seven nights, pay for six</h3>
+          <span class="offer-code">CODE <b>WEEKLY</b></span>
+          <p>Written for crews and long shoots. The seventh night is on us in any room type, and cottages move to a monthly rate after twenty-eight nights. Deposit is 30 percent, balance on arrival.</p>
+          <a class="btn" href="#book">APPLY AND SEE RATES</a>
+          <p class="offer-terms">Seven consecutive nights in the same room. Monthly rates quoted by the front desk.</p>
+        </article>
+
+        <article class="offer">
+          <div class="ph" data-cap="MEMBER RATES">
+<svg class="art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#sc-arrival"/></svg>
+            <img src="https://images.unsplash.com/photo-1522255272218-7ac5249be344?fm=jpg&q=75&w=900&auto=format&fit=crop&ixlib=rb-4.1.0"
+                 data-seed="royale-o3" data-w="900" data-h="610" loading="lazy"
+                 alt="Arrival at the hotel entrance">
+          </div>
+          <h3>AAA, senior and military, 15 percent</h3>
+          <span class="offer-code">VERIFIED AT CHECK-IN</span>
+          <p>Fifteen percent off for AAA and CAA members, guests aged 62 and over, AARP members, and US military and law enforcement. Select it when you book and show the card at the desk.</p>
+          <a class="btn" href="#book">APPLY AND SEE RATES</a>
+          <p class="offer-terms">Valid membership or ID required at check-in. One discount per reservation.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BREAKFAST -->
+  <section style="padding:0" id="breakfast">
+    <div class="split">
+      <div class="ph split-fig" data-cap="BREAKFAST ROOM">
+<svg class="art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#sc-library"/></svg>
+        <img src="https://images.unsplash.com/photo-1676089775605-9de96f8e02f8?fm=jpg&q=75&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0"
+             data-seed="royale-bfast" data-w="1200" data-h="1000" loading="lazy"
+             alt="The breakfast room and long communal table">
+      </div>
+      <div class="split-body">
+        <p class="sec-mark">EAT AND DRINK</p>
+        <h2>Breakfast here, dinner three doors down</h2>
+        <p class="lede" style="margin-top:20px">Breakfast is continental and included: coffee, tea, pastries and fruit, laid out in the library from early. We do not run a restaurant, and we would rather point you at the boulevard than pretend otherwise. Room service runs around the clock.</p>
+        <div class="hours">
+          <div><strong>Breakfast</strong><span>Included, daily</span></div>
+          <div><strong>Room service</strong><span>24 hours</span></div>
+          <div><strong>Sushi Dan</strong><span>4 minute walk</span></div>
+          <div><strong>La Mirch</strong><span>5 minute walk</span></div>
+          <div><strong>Montr&eacute;sor</strong><span>5 minute walk</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="wrap" id="gallery">
+    <p class="sec-mark">GALLERY</p>
+    <h2>The hotel, unedited</h2>
+    <div class="gal" id="gal">
+      <button class="wide tall"><div class="ph" data-cap="COURTYARD">
+<svg class="art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#sc-courtyard"/></svg><img src="https://images.unsplash.com/photo-1630587148265-761cbd139043?fm=jpg&q=75&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0" data-seed="royale-g1" data-w="1200" data-h="900" loading="lazy" alt="The walkway along the courtyard"></div></button>
+      <button><div class="ph" data-cap="CLASSIC ROOM">
+<svg class="art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#sc-room"/></svg><img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?fm=jpg&q=75&w=800&auto=format&fit=crop&ixlib=rb-4.1.0" data-seed="royale-g2" data-w="800" data-h="600" loading="lazy" alt="A Classic Room made up for arrival"></div></button>
+      <button><div class="ph" data-cap="LOUNGE">
+<svg class="art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#sc-library"/></svg><img src="https://images.unsplash.com/photo-1621293954908-907159247fc8?fm=jpg&q=75&w=800&auto=format&fit=crop&ixlib=rb-4.1.0" data-seed="royale-g3" data-w="800" data-h="600" loading="lazy" alt="The guest lounge"></div></button>
+      <button><div class="ph" data-cap="FAÇADE">
+<svg class="art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#sc-street"/></svg><img src="https://images.unsplash.com/photo-1568229988520-4bc288da81f7?fm=jpg&q=75&w=800&auto=format&fit=crop&ixlib=rb-4.1.0" data-seed="royale-g4" data-w="800" data-h="600" loading="lazy" alt="The façade from the boulevard"></div></button>
+      <button><div class="ph" data-cap="DELUXE QUEEN">
+<svg class="art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#sc-room"/></svg><img src="https://images.unsplash.com/photo-1662385930165-49ebaa03b152?fm=jpg&q=75&w=800&auto=format&fit=crop&ixlib=rb-4.1.0" data-seed="royale-g5" data-w="800" data-h="600" loading="lazy" alt="A Deluxe Queen room"></div></button>
+      <button class="wide"><div class="ph" data-cap="LIBRARY">
+<svg class="art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#sc-library"/></svg><img src="https://images.unsplash.com/photo-1676089775605-9de96f8e02f8?fm=jpg&q=75&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0" data-seed="royale-g6" data-w="1200" data-h="800" loading="lazy" alt="The library and breakfast table"></div></button>
+      <button><div class="ph" data-cap="COTTAGE BATH">
+<svg class="art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#sc-bath"/></svg><img src="https://images.unsplash.com/photo-1518860308377-800f02d5498a?fm=jpg&q=75&w=800&auto=format&fit=crop&ixlib=rb-4.1.0" data-seed="royale-g7" data-w="800" data-h="600" loading="lazy" alt="The soaking tub in a Garden Cottage"></div></button>
+      <button><div class="ph" data-cap="ARRIVAL">
+<svg class="art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#sc-arrival"/></svg><img src="https://images.unsplash.com/photo-1522255272218-7ac5249be344?fm=jpg&q=75&w=800&auto=format&fit=crop&ixlib=rb-4.1.0" data-seed="royale-g8" data-w="800" data-h="600" loading="lazy" alt="Arriving at the entrance"></div></button>
+    </div>
+  </section>
+
+  <!-- NEIGHBOURHOOD -->
+  <section class="hood" id="hood">
+    <div class="wrap">
+      <div class="hood-grid">
+        <div>
+          <p class="sec-mark">THE NEIGHBOURHOOD</p>
+          <h2>Everything near by, and how long it takes</h2>
+          <p class="lede" style="margin-top:20px">Studio City sits between the parks and the studios, which is the whole reason to stay here rather than in Hollywood. Universal is walkable. The Metro station is closer still, so you can leave the car under its carport all week.</p>
+          <div class="dist">
+            <div><span>Universal Studios Hollywood</span><span class="km">0.6 mi</span><span class="mins">12 min walk</span></div>
+            <div><span>Universal City / Studio City Metro</span><span class="km">0.5 mi</span><span class="mins">10 min walk</span></div>
+            <div><span>Universal CityWalk</span><span class="km">1.1 mi</span><span class="mins">3 min drive</span></div>
+            <div><span>Warner Bros. Studios</span><span class="km">3.0 mi</span><span class="mins">10 min drive</span></div>
+            <div><span>Hollywood Bowl</span><span class="km">3.1 mi</span><span class="mins">12 min drive</span></div>
+            <div><span>Hollywood Walk of Fame</span><span class="km">3.7 mi</span><span class="mins">15 min drive</span></div>
+            <div><span>Hollywood Burbank Airport</span><span class="km">4.0 mi</span><span class="mins">12 min drive</span></div>
+          </div>
+        </div>
+        <div class="ph hood-fig" data-cap="VENTURA BOULEVARD">
+<svg class="art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#sc-street"/></svg>
+          <img src="https://images.unsplash.com/photo-1561383818-ca5eee8c1d06?fm=jpg&q=75&w=1000&auto=format&fit=crop&ixlib=rb-4.1.0"
+               data-seed="royale-hood" data-w="1000" data-h="850" loading="lazy"
+               alt="Looking down Ventura Boulevard from the hotel">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RATINGS + TRUST -->
+  <section class="wrap">
+    <p class="sec-mark">WHAT GUESTS SAY</p>
+    <h2>Eighty-odd years, and the desk still knows your name</h2>
+    <div class="rate-strip">
+      <article>
+        <p class="score">4.5<small>/ 5</small></p>
+        <p class="src">Tripadvisor, from over 500 reviews</p>
+      </article>
+      <article>
+        <p class="score">9.4<small>/ 10</small></p>
+        <p class="src">Expedia group, rated exceptional</p>
+      </article>
+      <article>
+        <p class="score">8.7<small>/ 10</small></p>
+        <p class="src">Kayak guest score</p>
+      </article>
+    </div>
+
+    <div class="trust">
+      <article><h3>The lowest rate</h3><p>Find the same room cheaper anywhere else and we match it, then take another ten percent off.</p></article>
+      <article><h3>The real price</h3><p>Every rate shown includes taxes and fees. Nothing is added on the last screen.</p></article>
+      <article><h3>Free cancellation</h3><p>Cancel free up to 48 hours before arrival on standard rates, and change dates yourself online.</p></article>
+      <article><h3>A 30 percent deposit</h3><p>Pay a third now by card, PayPal or bank transfer. The balance is settled at the desk on arrival.</p></article>
+    </div>
+  </section>
+
+  <!-- BAND -->
+  <section class="band">
+    <div class="ph" data-cap="THE COURTYARD AT DUSK">
+<svg class="art" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#sc-courtyard"/></svg>
+      <img src="https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?fm=jpg&q=75&w=2000&auto=format&fit=crop&ixlib=rb-4.1.0"
+           data-seed="royale-band" data-w="2000" data-h="1100" loading="lazy"
+           alt="A room at El Royale in the evening">
+    </div>
+    <div class="wrap">
+      <p class="sec-mark" style="justify-content:center;color:var(--brass-soft)">RESERVATIONS</p>
+      <h2>See the real rate before you decide</h2>
+      <p>Pick your dates and every available room appears with its full price, taxes included. No redirect to another site, and no surprises on the last screen.</p>
+      <a class="btn btn-solid" href="#book" style="padding:16px 40px">CHECK AVAILABILITY</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <span class="brand"><span class="mark">EL ROYALE</span><span class="sub">STUDIO CITY &nbsp;&middot;&nbsp; EST. 1940</span></span>
+        <p style="max-width:30ch">11117 Ventura Blvd<br>Studio City, CA 91604<br>(818) 000-0000<br>stay@elroyalehotel.com</p>
+      </div>
+      <div class="f-col">
+        <h4>STAY</h4>
+        <a href="#rooms">Rooms &amp; cottages</a>
+        <a href="#offers">Offers</a>
+        <a href="#book">Extended stays</a>
+        <a href="#book">Production &amp; crew rates</a>
+        <a href="#">Accessibility</a>
+      </div>
+      <div class="f-col">
+        <h4>HOTEL</h4>
+        <a href="#amenities">Amenities</a>
+        <a href="#breakfast">Breakfast</a>
+        <a href="#hood">The neighbourhood</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#">Attraction tickets</a>
+      </div>
+      <div class="f-col f-news">
+        <h4>STAY IN TOUCH</h4>
+        <p style="margin-bottom:6px">Rates and offers. Six emails a year, nothing else.</p>
+        <input type="email" placeholder="Email address" aria-label="Email address">
+        <button>SUBSCRIBE</button>
+      </div>
+    </div>
+    <div class="f-bot">
+      <span>&copy; 2026 El Royale Hotel</span>
+      <span class="f-legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Accessibility</a><a href="#">Cancellation policy</a><a href="#">Sitemap</a></span>
+      <span class="pays"><span>VISA</span><span>MASTERCARD</span><span>AMEX</span><span>PAYPAL</span><span>BANK TRANSFER</span></span>
+    </div>
+  </div>
+</footer>
+
+<div class="lb" id="lb">
+  <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next">&#8250;</button>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(s){return document.querySelector(s)};
+  var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+
+  /* resilient images: unsplash -> picsum -> styled placeholder */
+  $$('.ph img').forEach(function(img){
+    if(img.complete&&img.naturalWidth>0)img.classList.add('on');
+    img.addEventListener('load',function(){if(img.naturalWidth>0)img.classList.add('on')});
+  });
+  document.addEventListener('error',function(e){
+    var el=e.target;
+    if(!el||el.tagName!=='IMG'||!el.closest('.ph'))return;
+    if(el.dataset.step==='1'){
+      el.dataset.step='2';el.closest('.ph').classList.add('noimg');el.style.visibility='hidden';return;
+    }
+    el.dataset.step='1';
+    el.src='https://picsum.photos/seed/'+(el.dataset.seed||'royale')+'/'+(el.dataset.w||1200)+'/'+(el.dataset.h||800);
+  },true);
+
+  /* header + bar */
+  var hdr=$('#hdr');
+  function measureHdr(){document.documentElement.style.setProperty('--hdr-h',hdr.offsetHeight+'px')}
+  measureHdr();window.addEventListener('resize',measureHdr);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(measureHdr);
+
+  function onScroll(){
+    var y=window.scrollY;
+    hdr.classList.toggle('stuck',y>60);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  /* mobile nav */
+  var mnav=$('#mnav');
+  $('#burger').addEventListener('click',function(){mnav.classList.add('open')});
+  $('#mclose').addEventListener('click',function(){mnav.classList.remove('open')});
+  $$('#mnav a').forEach(function(a){a.addEventListener('click',function(){mnav.classList.remove('open')})});
+
+  /* popovers */
+  var pops=[['#fArrive','#popCal'],['#fDepart','#popCal'],['#fGuests','#popGuests'],['#fCode','#popCode']];
+  function closeAll(){$$('.pop').forEach(function(p){p.classList.remove('open')})}
+  pops.forEach(function(pair){
+    $(pair[0]).addEventListener('click',function(e){
+      e.stopPropagation();
+      var p=$(pair[1]),was=p.classList.contains('open');
+      closeAll();if(!was)p.classList.add('open');
+    });
+  });
+  $$('.pop').forEach(function(p){p.addEventListener('click',function(e){e.stopPropagation()})});
+  document.addEventListener('click',closeAll);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeAll();mnav.classList.remove('open');closeLb()}});
+
+  /* calendar */
+  var MN=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var DW=['M','T','W','T','F','S','S'];
+  var today=new Date();today.setHours(0,0,0,0);
+  var view=new Date(today.getFullYear(),today.getMonth(),1);
+  var arrive=null,depart=null;
+  function key(d){return d.getFullYear()+'-'+d.getMonth()+'-'+d.getDate()}
+  function fmt(d){return d.getDate()+' '+MN[d.getMonth()].slice(0,3)}
+  function nights(){return arrive&&depart?Math.round((depart-arrive)/86400000):0}
+
+  function buildMonth(tbl,base){
+    var y=base.getFullYear(),m=base.getMonth();
+    var start=(new Date(y,m,1).getDay()+6)%7,len=new Date(y,m+1,0).getDate();
+    var html='<thead><tr>';
+    DW.forEach(function(d){html+='<th>'+d+'</th>'});
+    html+='</tr></thead><tbody><tr>';
+    for(var i=0;i<start;i++)html+='<td></td>';
+    for(var d=1;d<=len;d++){
+      var dt=new Date(y,m,d),cls='day'+(dt<today?' off':'');
+      if(arrive&&key(dt)===key(arrive))cls+=' sel';
+      if(depart&&key(dt)===key(depart))cls+=' sel';
+      if(arrive&&depart&&dt>arrive&&dt<depart)cls+=' in';
+      html+='<td><button class="'+cls+'" data-d="'+y+','+m+','+d+'">'+d+'</button></td>';
+      if((start+d)%7===0)html+='</tr><tr>';
+    }
+    tbl.innerHTML=html+'</tr></tbody>';
+  }
+  function renderCal(){
+    var n=new Date(view.getFullYear(),view.getMonth()+1,1);
+    $('#calT1').textContent=MN[view.getMonth()]+' '+view.getFullYear();
+    $('#calT2').textContent=MN[n.getMonth()]+' '+n.getFullYear();
+    buildMonth($('#cal1'),view);buildMonth($('#cal2'),n);
+    $$('.day').forEach(function(b){
+      b.addEventListener('click',function(e){
+        e.stopPropagation();
+        var p=b.dataset.d.split(','),dt=new Date(+p[0],+p[1],+p[2]);
+        if(!arrive||depart||dt<=arrive){arrive=dt;depart=null}else{depart=dt}
+        renderCal();syncBar();
+      });
+    });
+    $('#calFoot').textContent=!arrive?'Pick your arrival date. Two-night minimum on Friday and Saturday.'
+      :!depart?'Now pick your departure date.'
+      :nights()+' night'+(nights()>1?'s':'')+' selected. Rates update below.';
+  }
+  $('#calPrev').addEventListener('click',function(e){e.stopPropagation();view=new Date(view.getFullYear(),view.getMonth()-1,1);renderCal()});
+  $('#calNext').addEventListener('click',function(e){e.stopPropagation();view=new Date(view.getFullYear(),view.getMonth()+1,1);renderCal()});
+  renderCal();
+
+  /* guests */
+  var g={rooms:1,adults:2,kids:0},mn={rooms:1,adults:1,kids:0},mx={rooms:4,adults:8,kids:6};
+  $$('.steps button').forEach(function(b){
+    b.addEventListener('click',function(e){
+      e.stopPropagation();
+      var k=b.dataset.step,v=g[k]+ +b.dataset.d;
+      if(v<mn[k]||v>mx[k])return;
+      g[k]=v;
+      $('#nRooms').textContent=g.rooms;$('#nAdults').textContent=g.adults;$('#nKids').textContent=g.kids;
+      syncBar();
+    });
+  });
+  $('#codeIn').addEventListener('input',syncBar);
+
+  function syncBar(){
+    $('#vArrive').textContent=arrive?fmt(arrive):'Select date';
+    $('#vDepart').firstChild.nodeValue=depart?fmt(depart)+' ':'Select date ';
+    $('#vNights').textContent=nights()?('\u00b7 '+nights()+' night'+(nights()>1?'s':'')):'';
+    var t=g.adults+' adult'+(g.adults>1?'s':'');
+    if(g.kids)t+=', '+g.kids+' child'+(g.kids>1?'ren':'');
+    t+=', '+g.rooms+' room'+(g.rooms>1?'s':'');
+    $('#vGuests').textContent=t;
+    var c=$('#codeIn').value.trim();
+    $('#vCode').textContent=c?c.toUpperCase():'Add code';
+  }
+  syncBar();
+
+  /* search reveals totals */
+  $('#goSearch').addEventListener('click',function(){
+    closeAll();
+    if(!arrive||!depart){$('#fArrive').click();return}
+    var n=nights();
+    $$('.room .total').forEach(function(el){
+      var rate=+el.dataset.rate;
+      el.textContent='$'+(rate*n).toLocaleString()+' total for '+n+' night'+(n>1?'s':'')+', taxes included';
+      el.classList.add('on');
+    });
+    $$('.avail').forEach(function(el){
+      var left=+el.dataset.left;
+      el.textContent=left===1?'LAST ONE':left+' AVAILABLE';
+      el.classList.toggle('low',left<=2);
+      el.classList.add('on');
+    });
+    $('#chipText').textContent=fmt(arrive)+' to '+fmt(depart)+' \u00b7 '+g.adults+' guests';
+    $('#datesChip').classList.add('on');
+    document.getElementById('rooms').scrollIntoView({behavior:'smooth'});
+  });
+  $('#chipClear').addEventListener('click',function(){
+    $('#datesChip').classList.remove('on');
+    $$('.room .total,.avail').forEach(function(el){el.classList.remove('on')});
+    window.scrollTo({top:0,behavior:'smooth'});
+    setTimeout(function(){$('#fArrive').click()},700);
+  });
+
+  /* lightbox */
+  var imgs=$$('#gal img'),idx=0,lb=$('#lb');
+  function openLb(i){
+    idx=(i+imgs.length)%imgs.length;
+    $('#lbImg').src=imgs[idx].currentSrc||imgs[idx].src;
+    $('#lbImg').alt=imgs[idx].alt;lb.classList.add('open');
+  }
+  function closeLb(){lb.classList.remove('open')}
+  $$('#gal button').forEach(function(b,i){b.addEventListener('click',function(){openLb(i)})});
+  $('#lbClose').addEventListener('click',closeLb);
+  $('#lbPrev').addEventListener('click',function(e){e.stopPropagation();openLb(idx-1)});
+  $('#lbNext').addEventListener('click',function(e){e.stopPropagation();openLb(idx+1)});
+  lb.addEventListener('click',function(e){if(e.target===lb)closeLb()});
+})();
+</script>
+</body>
+</html>
